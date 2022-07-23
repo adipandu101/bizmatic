@@ -4,11 +4,11 @@ export default {
   theme: {
     themes: {
       light: {
-        primary: '#9155FD',
+        primary: '#2F86FF', //base primary
         accent: '#0d6efd',
-        secondary: '#8A8D93',
+        secondary: '#687083', //base secondary
         success: '#56CA00',
-        info: '#16B1FF',
+        info: '#092540',
         warning: '#FFB400',
         error: '#FF4C51',
       },

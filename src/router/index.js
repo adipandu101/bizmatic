@@ -1,17 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/index'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: 'dashboard',
+    name: 'home',
+    component: () => import('@/views/pages/Home.vue'),
+    meta: {
+      layout: 'blank',
+    },
   },
   {
     path: '/dashboard',
     name: 'dashboard',
     component: () => import('@/views/dashboard/Dashboard.vue'),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/typography',
@@ -78,5 +86,34 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.getters.isLoggedIn) {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        store.dispatch('logout').then(() => {
+          window.location.href = "/pages/login";
+        })
+      }
+      next()
+      return
+    }
+    next('/pages/login')
+  } else {
+    next()
+  }
+})
+
+router.beforeResolve((to, from, next) => {
+  if (to.path) {
+    // pace.start()
+  }
+  next()
+});
+
+router.afterEach((to, from, next) => {
+  // pace.done()
+});
 
 export default router
