@@ -24,19 +24,20 @@
         <v-toolbar-title>
           <v-img :src="require('@/assets/images/logos/bizmatic_logo.svg')" max-height="32px" alt="logo" contain></v-img>
         </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn text color="#687083" style="text-transform: none"> Home </v-btn>
+        <v-spacer v-if="$route.path == '/'"></v-spacer>
+        <v-btn text @click="$router.push('/')" color="#687083" style="text-transform: none"> Home </v-btn>
         <v-btn text color="#687083" style="text-transform: none"> How It Works </v-btn>
         <v-btn text color="#687083" style="text-transform: none"> Marketplace </v-btn>
         <v-btn text color="#687083" style="text-transform: none"> Pricing </v-btn>
-        <v-btn text color="#687083" style="text-transform: none"> Login </v-btn>
+        <v-spacer v-if="$route.path !== '/'"></v-spacer>
+        <v-btn text @click="$router.push('/dashboard')" color="#687083" style="text-transform: none"> Login </v-btn>
         <v-btn color="primary" class="text-white" style="text-transform: none; font-weight: 600"> Sign Up </v-btn>
       </v-app-bar>
     </v-banner>
-    <v-main class="px-13" style="background: white">
+    <v-main class="px-13" :style="'background: ' + ($route.path == '/' ? 'white' : '#F9FAFB')">
       <router-view></router-view>
     </v-main>
-    <v-footer app absolute height="192" class="py-14 px-0">
+    <v-footer app absolute height="192" class="py-3 px-0">
       <v-row style="background: #2f86ff; height: 192px; padding-left: 100px; padding-right: 100px">
         <v-col cols="10">
           <div class="pt-11" style="font-size: 30px; font-weight: 700; line-height: 36px; color: white">
@@ -125,7 +126,7 @@
 <script>
 window.addEventListener('scroll', e => {
   const nav = document.querySelector('.navbar-banner')
-  const defaultStyle = 'top: 0px; position: sticky; z-index: 1;'
+  const defaultStyle = 'top: 0px; position: sticky; z-index: 5;'
   console.log(defaultStyle)
   if (window.pageYOffset > 100) {
     nav.setAttribute('style', defaultStyle + '; box-shadow: rgba(60, 64, 67, 0.3) 0px 0px 30px 0px !important')

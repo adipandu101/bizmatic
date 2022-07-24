@@ -246,23 +246,4 @@ export default {
 </script>
 
 <style scoped>
-.font-secondary {
-  color: #687083;
-  font-size: 18px;
-  line-height: 28px;
-}
-.section-title {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 36px;
-  color: #092540;
-  -webkit-text-stroke: 1px #092540;
-}
-.section-subtitle {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
-  color: #092540;
-  -webkit-text-stroke: 1px #092540;
-}
 </style>

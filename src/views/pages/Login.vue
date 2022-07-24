@@ -1,42 +1,46 @@
 <template>
-  <div class="auth-wrapper auth-v1">
-    <div class="auth-inner">
+  <div class="auth-wrapper auth-v1 pb-16">
+    <div class="auth-inner pb-8">
+      <v-img
+        class="mb-10"
+        :src="require('@/assets/images/logos/bizmatic_logo.svg')"
+        max-height="52px"
+        alt="logo"
+        contain
+      ></v-img>
       <v-card class="auth-card">
         <!-- logo -->
-        <v-card-title class="d-flex align-center justify-center py-7">
+        <v-card-title class="d-flex align-center justify-center pt-8 pb-2">
           <router-link to="/" class="d-flex align-center">
-            <v-img
-              :src="require('@/assets/images/logos/logo.svg')"
-              max-height="30px"
-              max-width="30px"
-              alt="logo"
-              contain
-              class="me-3"
-            ></v-img>
-
-            <h2 class="text-2xl font-weight-semibold">Materio</h2>
+            <div class="section-subtitle">Sign In to Bizmatic</div>
           </router-link>
         </v-card-title>
 
         <!-- title -->
-        <v-card-text>
-          <p class="text-2xl font-weight-semibold text--primary mb-2">Welcome to Materio! 👋🏻</p>
-          <p class="mb-2">Please sign-in to your account and start the adventure</p>
+        <v-card-text class="text-center">
+          <p class="mb-2" style="color: #687083; font-size: 14px; line-height: 20px">
+            New Here?
+            <span style="font-weight: 600; color: #2f86ff"
+              ><router-link :to="{ name: 'pages-register' }"> Create an Account </router-link></span
+            >
+          </p>
         </v-card-text>
 
         <!-- login form -->
         <v-card-text>
           <v-form>
             <v-text-field
+              dense
               v-model="email"
               outlined
               label="Email"
               placeholder="john@example.com"
               hide-details
-              class="mb-3"
+              class="mt-3 mb-6"
             ></v-text-field>
 
             <v-text-field
+              dense
               v-model="password"
               outlined
               :type="isPasswordVisible ? 'text' : 'password'"
@@ -47,14 +51,14 @@
               @click:append="isPasswordVisible = !isPasswordVisible"
             ></v-text-field>
 
-            <div class="d-flex align-center justify-space-between flex-wrap">
-              <v-checkbox label="Remember Me" hide-details class="me-3 mt-1"> </v-checkbox>
-
+            <div class="text-end mt-2">
               <!-- forgot link -->
-              <a href="javascript:void(0)" class="mt-1"> Forgot Password? </a>
+              <a href="javascript:void(0)" class="mt-1" style="font-weight: 600; color: #2f86ff; font-size: 12px">
+                Forgot Password?
+              </a>
             </div>
 
-            <v-btn block color="primary" class="mt-6"> Login </v-btn>
+            <v-btn block color="primary" class="mt-6"> Sign In </v-btn>
           </v-form>
         </v-card-text>
 
@@ -67,38 +71,39 @@
         <!-- divider -->
         <v-card-text class="d-flex align-center mt-2">
           <v-divider></v-divider>
-          <span class="mx-5">or</span>
+          <span class="mx-5">OR</span>
           <v-divider></v-divider>
         </v-card-text>
         <!-- social links -->
-        <v-card-actions class="d-flex justify-center">
-          <v-btn v-for="link in socialLink" :key="link.icon" icon class="ms-1">
-            <v-icon :color="$vuetify.theme.dark ? link.colorInDark : link.color">
-              {{ link.icon }}
-            </v-icon>
+        <v-card-actions v-for="link in socialLink" :key="link.icon">
+          <v-btn block color="#F9FAFB" class="mt-0" style="text-transform: none">
+            <center>
+              <v-row style="color: #687083; font-weight: 600; line-height: 20px">
+                <v-col cols="2" class="pe-0">
+                  <v-img
+                    class="d-flex align-end"
+                    style="display: inline-block"
+                    max-height="20"
+                    :src="require('@/assets/images/icons/' + link.icon)"
+                    alt="logo"
+                    contain
+                  ></v-img>
+                </v-col>
+                <v-col cols="10" class="ps-0">
+                  <span class="ps-2">{{ 'Continue with ' + link.name }}</span>
+                </v-col>
+              </v-row>
+            </center>
           </v-btn>
         </v-card-actions>
       </v-card>
     </div>
-
-    <!-- background triangle shape  -->
-    <img
-      class="auth-mask-bg"
-      height="173"
-      :src="require(`@/assets/images/misc/mask-${$vuetify.theme.dark ? 'dark' : 'light'}.png`)"
-    />
-
-    <!-- tree -->
-    <v-img class="auth-tree" width="247" height="185" src="@/assets/images/misc/tree.png"></v-img>
-
-    <!-- tree  -->
-    <v-img class="auth-tree-3" width="377" height="289" src="@/assets/images/misc/tree-3.png"></v-img>
   </div>
 </template>
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
+import { mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 // import { ref } from '@vue/composition-api'
 
 export default {
@@ -114,24 +119,22 @@ export default {
       },
       socialLink: [
         {
-          icon: mdiFacebook,
+          icon: 'google.svg',
+          name: 'Google',
+          color: '#db4437',
+          colorInDark: '#db4437',
+        },
+        {
+          icon: 'facebook.svg',
+          name: 'Facebook',
           color: '#4267b2',
           colorInDark: '#4267b2',
         },
         {
-          icon: mdiTwitter,
+          icon: 'apple.svg',
+          name: 'Apple',
           color: '#1da1f2',
           colorInDark: '#1da1f2',
-        },
-        {
-          icon: mdiGithub,
-          color: '#272727',
-          colorInDark: '#fff',
-        },
-        {
-          icon: mdiGoogle,
-          color: '#db4437',
-          colorInDark: '#db4437',
         },
       ],
     }
