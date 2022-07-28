@@ -124,16 +124,17 @@
 </template>
 
 <script>
-window.addEventListener('scroll', e => {
+/*window.addEventListener('scroll', e => {
   const nav = document.querySelector('.navbar-banner')
   const defaultStyle = 'top: 0px; position: sticky; z-index: 5;'
-  console.log(defaultStyle)
-  if (window.pageYOffset > 100) {
-    nav.setAttribute('style', defaultStyle + '; box-shadow: rgba(60, 64, 67, 0.3) 0px 0px 30px 0px !important')
-  } else {
-    nav.setAttribute('style', defaultStyle)
+  if (nav) {
+    if (window.pageYOffset > 100) {
+      nav.setAttribute('style', defaultStyle + '; box-shadow: rgba(60, 64, 67, 0.3) 0px 0px 30px 0px !important')
+    } else {
+      nav.setAttribute('style', defaultStyle)
+    }
   }
-})
+})*/
 
 import VerticalNavMenu from './components/vertical-nav-menu/VerticalNavMenu.vue'
 import { mdiInstagram, mdiFacebook, mdiTwitter, mdiYoutube } from '@mdi/js'

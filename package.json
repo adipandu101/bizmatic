@@ -36,8 +36,10 @@
     "apexcharts": "^3.27.3",
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
+    "v-wow": "github:guisoares2011/vue-wow",
     "vue": "^2.6.11",
     "vue-apexcharts": "^1.6.2",
+    "vue-horizontal-scroll": "^0.2.4",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",
     "vuex": "^3.4.0"

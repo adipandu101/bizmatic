@@ -31,21 +31,21 @@
           <v-form>
             <v-text-field
               dense
-              v-model="email"
+              v-model="form.email"
               outlined
               label="Email"
-              placeholder="john@example.com"
+              placeholder=""
               hide-details
               class="mt-3 mb-6"
             ></v-text-field>
 
             <v-text-field
               dense
-              v-model="password"
+              v-model="form.password"
               outlined
               :type="isPasswordVisible ? 'text' : 'password'"
               label="Password"
-              placeholder="············"
+              placeholder=""
               :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
               hide-details
               @click:append="isPasswordVisible = !isPasswordVisible"
@@ -58,7 +58,7 @@
               </a>
             </div>
 
-            <v-btn block color="primary" class="mt-6"> Sign In </v-btn>
+            <v-btn block color="primary" class="mt-6" @click="login()"> Sign In </v-btn>
           </v-form>
         </v-card-text>
 
@@ -111,8 +111,10 @@ export default {
     return {
       clientId: '500337753631-d60msku0fke38oii3ths0iohgc0a62ar.apps.googleusercontent.com',
       isPasswordVisible: false,
-      email: '',
-      password: '',
+      form: {
+        email: '',
+        password: '',
+      },
       icons: {
         mdiEyeOutline,
         mdiEyeOffOutline,
@@ -139,7 +141,22 @@ export default {
       ],
     }
   },
-  methods: {},
+  methods: {
+    async login() {
+      this.overlay = true
+      this.$store.dispatch('login', this.form).then(res => {
+        //if(res.data.status == 'success')
+        //{
+        window.location = '/dashboard'
+        //}
+      })
+      /*.catch(e => {
+          console.log('Error: ' + e)
+          this.$toastr.e(e.response.data.message)
+          this.overlay = false
+        })*/
+    },
+  },
 }
 </script>
 

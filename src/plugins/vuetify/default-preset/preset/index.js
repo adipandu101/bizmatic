@@ -10,7 +10,7 @@ export default {
         success: '#56CA00',
         info: '#092540',
         warning: '#FFB400',
-        error: '#FF4C51',
+        error: '#EB344D',
       },
       dark: {
         primary: '#9155FD',
@@ -19,7 +19,7 @@ export default {
         success: '#56CA00',
         info: '#16B1FF',
         warning: '#FFB400',
-        error: '#FF4C51',
+        error: '#EB344D',
       },
     },
   },

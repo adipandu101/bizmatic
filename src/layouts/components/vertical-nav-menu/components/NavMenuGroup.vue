@@ -1,10 +1,7 @@
 <template>
-  <v-list-group
-    ref="refVListGroup"
-    class="vertical-nav-menu-group text--primary"
-  >
+  <v-list-group ref="refVListGroup" class="vertical-nav-menu-group text--primary">
     <template #prependIcon>
-      <v-icon :class="{'alternate-icon-small': !icon}">
+      <v-icon :class="{ 'alternate-icon-small': !icon }">
         {{ icon }}
       </v-icon>
     </template>
@@ -38,7 +35,10 @@ export default {
 
 <style lang="scss">
 // @import '~vuetify/src/styles/styles.sass';
-
+.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+  color: #00184a !important;
+  font-weight: 500;
+}
 .app-navigation-menu {
   .v-list-item {
     padding-left: 22px;

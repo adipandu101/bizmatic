@@ -1,6 +1,13 @@
+.content-title {
+    color: #687083;
+    font-size: 14px;
+    line-height: 20px
+}
+
 .v-banner__wrapper {
     border-bottom: none !important;
 }
+
 
 .add-shadow {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 30px 0px !important;
@@ -10,6 +17,14 @@
     color: #687083;
     font-size: 18px;
     line-height: 28px;
+}
+
+.font-primary {
+    color: #2F86FF !important;
+}
+
+.font-white {
+    color: #ffffff !important;
 }
 
 .section-title {
@@ -26,4 +41,36 @@
     line-height: 32px;
     color: #092540;
     -webkit-text-stroke: 1px #092540;
+}
+
+.section-subsubtitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #092540;
+}
+
+.content-text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #092540;
+}
+
+.content-muted-text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #9AA2B1;
+}
+
+.green-surface {
+    background-color: #D2F4F1 !important;
+    border-radius: 6px !important;
+    color: #2EBBAF !important;
+}
+
+.danger-surface {
+    background-color: #FFD3D9 !important;
+    border-radius: 6px !important;
+    color: #EB344D !important;
 }

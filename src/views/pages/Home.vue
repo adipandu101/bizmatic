@@ -230,7 +230,7 @@ export default {
       rules: {
         nameRules: [v => !!v || 'Name is required'],
         emailRules: [v => !!v || 'Email is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid'],
-        messagesRules: [v => !!v || 'Name is required', ,],
+        messagesRules: [v => !!v || 'text is required'],
       },
       icons: {
         mdiArrowRight,

@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col>
-        <div class="section-subtitle">Dashboard</div>
+        <div class="section-subtitle">Your Apps</div>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-end">
@@ -136,7 +136,6 @@ export default {
   components: {},
   data() {
     return {
-      tab: '',
       profile: {
         completion: '60',
         details: {

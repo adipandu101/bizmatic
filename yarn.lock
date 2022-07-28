@@ -2807,7 +2807,7 @@
     "browserslist" "^4.16.7"
     "semver" "7.0.0"
 
-"core-js@^3.6.5":
+"core-js@^3.6.4", "core-js@^3.6.5":
   "integrity" "sha512-AAkP8i35EbefU+JddyWi12AWE9f2N/qr/pwnDtWz4nyUIBGMJPX99ANFFRSw6FefM374lDujdtLDyhN2A/btHw=="
   "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.16.1.tgz"
   "version" "3.16.1"
@@ -8594,6 +8594,10 @@
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-3.4.0.tgz"
   "version" "3.4.0"
 
+"v-wow@github:guisoares2011/vue-wow":
+  "resolved" "git+ssh://git@github.com/guisoares2011/vue-wow.git#dd06e2d2611be6635b9cc8ca329a0244f792d04e"
+  "version" "1.2.1"
+
 "v8-compile-cache@^2.0.3":
   "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
   "resolved" "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
@@ -8657,6 +8661,14 @@
     "esquery" "^1.4.0"
     "lodash" "^4.17.21"
     "semver" "^6.3.0"
+
+"vue-horizontal-scroll@^0.2.4":
+  "integrity" "sha512-PoMVRAW4BswvL/uwqm1Do13qC/DaFMxgiOABPWvdIQUq9gQFwhSXJJ/hh/RJkafWbU43tY0Nf9/B3F0runqycw=="
+  "resolved" "https://registry.npmjs.org/vue-horizontal-scroll/-/vue-horizontal-scroll-0.2.4.tgz"
+  "version" "0.2.4"
+  dependencies:
+    "core-js" "^3.6.4"
+    "vue" "^2.6.11"
 
 "vue-hot-reload-api@^2.3.0":
   "integrity" "sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog=="

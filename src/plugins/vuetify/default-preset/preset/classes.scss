@@ -6,7 +6,22 @@
 // ————————————————————————————————————
 
 .bg-gradient-primary {
-  background: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
+  box-shadow: none !important;
+}
+
+.bg-gradient-primary::before {
+  background-color: transparent;
+}
+
+.bg-gradient-secondary {
+  box-shadow: none !important;
+  background-color: #2F86FF;
+  border-radius: 0px;
+}
+
+.bg-gradient-secondary::before {
+  background-color: #2F86FF;
+  opacity: 0 !important;
 }
 
 @include theme--child(bg-card) using ($material) {
@@ -37,6 +52,7 @@
 
       .v-messages:not([role='alert']) {
         min-height: unset;
+
         .v-messages__wrapper {
           min-height: unset;
         }
@@ -141,10 +157,12 @@
         th {
           border-top: 0;
         }
+
         th {
           &:first-child {
             border-top-left-radius: 6px;
           }
+
           &:last-child {
             border-top-right-radius: 6px;
           }
